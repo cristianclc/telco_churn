@@ -11,3 +11,5 @@ lightgbm
 seaborn
 matplotlib
 pytest
+black
+httpx
