@@ -11,12 +11,15 @@ ruta_modelos = os.path.join(current_dir, "models.joblib")
 
 models = joblib.load(ruta_modelos)
 
-@app.post("/predict", response_model=PredictionResponse)
 
+@app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     try:
         if request.model_name not in models:
-            return {"error": "Modelo no encontrado", "available_models": list(models.keys())}
+            return {
+                "error": "Modelo no encontrado",
+                "available_models": list(models.keys()),
+            }
 
         pipeline = models[request.model_name]
 
@@ -28,7 +31,7 @@ def predict(request: PredictionRequest):
         return PredictionResponse(
             model_used=request.model_name,
             churn_probability=float(prediction_proba),
-            prediction=prediction
+            prediction=prediction,
         )
     except Exception as e:
         return {"error": f"Ocurrió un error al predecir: {str(e)}"}

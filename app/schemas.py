@@ -1,20 +1,16 @@
 from pydantic import BaseModel
 
+
 class CustomerData(BaseModel):
-    #numéricas
     SeniorCitizen: int
     MonthlyCharges: float
     TotalCharges: float
     tenure: int
-
-    #binarias
     gender: int
     Partner: int
     Dependents: int
     PhoneService: int
     PaperlessBilling: int
-
-    #categóricas
     MultipleLines: str
     InternetService: str
     OnlineSecurity: str
