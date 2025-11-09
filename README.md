@@ -1,8 +1,8 @@
 # Predicción de Churn en Telecomunicaciones
 
 ## Descripción
-Este proyecto implementa un modelo de Machine Learning para predecir el abandono de clientes (churn) en una empresa de telecomunicaciones.
-Incluye modelos basados en Random Forest, XGBoost, CatBoost y LightGBM, empaquetados dentro de una API REST desarrollada con FastAPI y desplegable mediante Docker.
+Este proyecto implementa diversos modelos de Machine Learning para predecir el abandono de clientes (churn) en una empresa de telecomunicaciones.
+Incluye modelos como Random Forest, XGBoost, CatBoost y LightGBM, empaquetados dentro de una API REST desarrollada con FastAPI y desplegable mediante Docker.
 
 ## Componentes
 - `notebooks/`: Análisis exploratorio, entrenamiento y explicabilidad.
