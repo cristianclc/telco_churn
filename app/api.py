@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.schemas import CustomerData, PredictionRequest, PredictionResponse
+from app.schemas import PredictionRequest, PredictionResponse
 import pandas as pd
 import joblib
 import os
@@ -12,6 +12,7 @@ ruta_modelos = os.path.join(current_dir, "models.joblib")
 models = joblib.load(ruta_modelos)
 
 @app.post("/predict", response_model=PredictionResponse)
+
 def predict(request: PredictionRequest):
     try:
         if request.model_name not in models:
@@ -31,4 +32,3 @@ def predict(request: PredictionRequest):
         )
     except Exception as e:
         return {"error": f"Ocurrió un error al predecir: {str(e)}"}
-
