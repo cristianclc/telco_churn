@@ -57,8 +57,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_eda_preprocessing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -672,7 +670,7 @@ memory usage: 1.1+ MB
 </div>
 <p><strong>1. Dimensión del Dataset:</strong></p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">RangeIndex:</span> <span class="pre">7043</span> <span class="pre">entries,</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">7042</span></code></strong>: El dataset contiene <strong>7043 registros de clientes</strong>, cada uno identificado por un índice y código asignado por la comapañia de telecomunicaciones <code class="docutils literal notranslate"><span class="pre">customerID</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RangeIndex:</span> <span class="pre">7043</span> <span class="pre">entries,</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">7042</span></code></strong>: El dataset contiene <strong>7043 registros de clientes</strong>, cada uno identificado por un índice y código asignado por la compañia de telecomunicaciones <code class="docutils literal notranslate"><span class="pre">customerID</span></code>.</p></li>
 </ul>
 <p><strong>2. Integridad de los Datos (Ausencia de Valores Nulos):</strong></p>
 <ul class="simple">
@@ -1124,7 +1122,7 @@ Coeficiente de Variación:  99.28 %
 <li><p><code class="docutils literal notranslate"><span class="pre">Media</span></code>: $64.80</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Mediana</span></code>: $70.35</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Desviación</span> <span class="pre">estándar</span></code>: $30.09</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Rango</span></code>: <span class="math notranslate nohighlight">\(18.25 a \)</span>118.75</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rango</span></code>: 18.25 a 118.75 dólares</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Asimetría</span></code>: -0.22</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Curtosis</span></code>: -1.26</p></li>
 </ul>
@@ -1136,13 +1134,13 @@ Coeficiente de Variación:  99.28 %
 <li><p><code class="docutils literal notranslate"><span class="pre">Media</span></code>: $2283.30</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Mediana</span></code>: $1397.48</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Desviación</span> <span class="pre">estándar</span></code>: $2266.77</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Rango</span></code>: <span class="math notranslate nohighlight">\(18.80 a \)</span>8684.80</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rango</span></code>: 18.80 a 8684.80 dólares</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Asimetría</span></code>: 0.96</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Curtosis</span></code>: -0.23</p></li>
 </ul>
 <p><strong>Interpretación del Histograma y Boxplot:</strong></p>
 <p>El histograma muestra una distribución altamente sesgada a la derecha, lo que sugiere que la gran mayoría de los clientes ha pagado cantidades relativamente bajas en total (pico inicial muy alto), mientras que una larga cola se extiende hacia valores altos.</p>
-<p>Relativo al boxplot, la mediana (<span class="math notranslate nohighlight">\(1397) es mucho menor que la media (\)</span>2283), lo que confirma el sesgo. El 50% central de los clientes ha pagado entre <span class="math notranslate nohighlight">\(401 y \)</span>3794. Hay muchos valores atípicos en el extremo alto, que son los clientes con mucha antigüedad y/o cargos mensuales altos.</p>
+<p>Relativo al boxplot, la mediana (1397) es mucho menor que la media (2283), lo que confirma el sesgo. El 50% central de los clientes ha pagado entre 401 dólares y 3794 dólares. Hay muchos valores atípicos en el extremo alto, que son los clientes con mucha antigüedad y/o cargos mensuales altos.</p>
 <section id="valores-atipicos">
 <h4><strong>Valores atípicos</strong><a class="headerlink" href="#valores-atipicos" title="Link to this heading">#</a></h4>
 <p>Dado que el proyecto aborda un problema de clasificación binaria, los modelos basados en árboles de decisión como Random Forest, XGBoost, LightGBM y CatBoost son naturalmente robustos ante valores atípicos.</p>
@@ -1633,7 +1631,7 @@ Coeficiente de Variación:  99.28 %
 <ul class="simple">
 <li><p><strong>Churn vs MonthlyCharges (Cargos Mensuales)</strong></p></li>
 </ul>
-<p>(<code class="docutils literal notranslate"><span class="pre">Churn=1</span></code>): Tienen cargos mensuales más altos. La mediana para este grupo está alrededor de <span class="math notranslate nohighlight">\(80-\)</span>85. Existe una relación directa entre el precio mensual y el churn. Los clientes que pagan más al mes son más propensos a irse.</p>
+<p>(<code class="docutils literal notranslate"><span class="pre">Churn=1</span></code>): Tienen cargos mensuales más altos. La mediana para este grupo está alrededor de 80-85. Existe una relación directa entre el precio mensual y el churn. Los clientes que pagan más al mes son más propensos a irse.</p>
 <ul class="simple">
 <li><p><strong>Churn vs TotalCharges (Cargos Totales)</strong></p></li>
 </ul>
