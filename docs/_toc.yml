@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+chapters:
+  - file: 1_eda_preprocessing
+  - file: 2_model_training
+  - file: 3_interpretability
+  - file: conclusiones

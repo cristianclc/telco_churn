@@ -1,3 +1,9 @@
+<h2 align="center">Vídeo demostración del Proyecto</h2>
+
+<p align="center">
+  <img src="assets/demostracion.gif" width="600" alt="Vista previa de la API">
+</p>
+
 # Predicción de Churn en Telecomunicaciones
 
 ## Descripción
@@ -12,9 +18,11 @@ Incluye modelos como Random Forest, XGBoost, CatBoost y LightGBM, empaquetados d
 ## Instalación
 ```bash
 git clone https://github.com/cristianclc/telco_churn.git
-cd telco-churn
+cd telco_churn
 pip install -r requirements.txt
 ```
+Abrimos Docker Desktop
+
 Construimos la imagen Docker
 
 ## Docker
@@ -22,7 +30,7 @@ Construimos la imagen Docker
 docker build -t telco-churn .
 docker run -d --name telco-churn-container -p 8000:8000 telco-churn
 ```
-Verificamos que la imagen está corriendo con
+Verificamos que la imagen está ejecutando con:
 
 ```bash
 docker ps
@@ -30,8 +38,7 @@ docker ps
 
 ## Probamos la API
 
-Una vez el contenedor esté corriendo, la API estará disponible en: http://localhost:8000
-
+Una vez el contenedor esté corriendo, la API estará disponible en: http://127.0.0.1:8000/docs
 Dentro del enlace, enviamos un `POST` a `/predict` con un JSON como este:
 
 ```json
