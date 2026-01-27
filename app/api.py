@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.schemas import PredictionRequest, PredictionResponse
+from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import joblib
 import os
@@ -11,6 +12,13 @@ ruta_modelos = os.path.join(current_dir, "models.joblib")
 
 models = joblib.load(ruta_modelos)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # En producción, especifica tu dominio
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
