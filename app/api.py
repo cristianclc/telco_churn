@@ -20,6 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post("/predict", response_model=PredictionResponse)
 def predict(request: PredictionRequest):
     try:
